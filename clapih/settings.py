@@ -25,7 +25,7 @@ SECRET_KEY = '=ynrxa2blhj^c$u!m&(r!5uc%0@zlmvrxr$!v835_r$3hb%#4b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://clapih.herokuapp.com']
+ALLOWED_HOSTS = ['clapih.herokuapp.com', 'https://clapih.herokuapp.com']
 
 
 # Application definition
