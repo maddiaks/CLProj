@@ -25,7 +25,7 @@ SECRET_KEY = '=ynrxa2blhj^c$u!m&(r!5uc%0@zlmvrxr$!v835_r$3hb%#4b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clapih.herokuapp.com', 'https://clapih.herokuapp.com']
+ALLOWED_HOSTS = ['clapih.herokuapp.com', 'https://clapih.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    # 'smart_selects',
+    # 'corsheaders',
+    'CLThreatsApp.apps.CLThreatsAppConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [
