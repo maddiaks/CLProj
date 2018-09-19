@@ -1,0 +1,5 @@
+/*.sqlite3
+*.py[cod]
+/db2del
+/media
+staticfiles
