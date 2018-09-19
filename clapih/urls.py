@@ -16,9 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from UserApis.base.router import api_urlpatterns as api_v1
+from UserApis.base.CLThreatsApp import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/v1/', include(api_v1)),
+    # url(r'^api/v1/urlinfo/1/{[A-Za-z]}', views.UrlCheckView.as_view(), name='threat-list'),
+    url(r'^api/v1/urlinfo/1/(?P<hostname>\w+)/(?P<original_path>\w+)/$', views.UrlCheckView.as_view(), name='threat-list'),
+    url(r'^api/v1/urlinfo/1/(?P<hostname>\w+)/$', views.UrlCheckView.as_view(), name='threat-list'),
+    url(r'^api/v1/urlinfo/1/(?P<hostname>[a-zA-Z0-9_.-/:?=#]*)/$', views.UrlCheckView.as_view(), name='threat-list'),
 
 ]

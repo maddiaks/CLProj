@@ -138,3 +138,4 @@ SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
 
+DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240 # higher than the count of fields

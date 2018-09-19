@@ -10,4 +10,4 @@ class Threat(models.Model):
     updated_at = models.DateTimeField(auto_now_add=False, auto_now=True, editable=True)
 
     def __str__(self):
-        return self.ip_address + "-" + self.domainname + "-" + self.description
+        return self.ip_address + "-" + self.domainname + "-"
