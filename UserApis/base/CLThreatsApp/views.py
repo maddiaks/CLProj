@@ -5,6 +5,7 @@ from CLThreatsApp.models import Threat
 from .serializers import ThreatSerializer, ThreatCreateSerializer
 from rest_framework.response import Response
 from UserApis import utils
+from CLThreatsApp import CLResponse
 
 
 class CreateListMixin:
@@ -53,14 +54,17 @@ class UrlCheckView(APIView):
         db_threat_obj = Threat.objects.all()
 
         data = {'status': True}
+        cl_response = CLResponse.CLResponse()
 
         for item in result:
             querySet = Threat.objects.filter(Q(ip_address__iexact=item) | Q(domainname__iexact=item))
             if len(querySet) >= 1:
-                data['status'] = False
-                break
+                return Response(cl_response.__dict__)
+                # break
 
-        return Response(data)
+        cl_success = CLResponse.CLResponse()
+        cl_success.threatInfo = None
+        return Response(cl_success.__dict__)
 
 # class ListThreat(APIView):
 #     def get(self, request, format=None):
